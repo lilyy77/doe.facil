@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doe.Fácil</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="barra.css">
+  <link rel="stylesheet" href="sub.barra.css">
+
+  <!-- jQuery e Bootstrap scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/e631c8149a.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Yrsa', serif;
+}
+
+/* ==================== FUNDO ==================== */
+body {
+  background: url('img/fundo.jpeg') no-repeat center top; /* topo visível */
+  background-size: cover;
+  min-height: 100vh;
+  padding-top: 100px; /* altura do menu fixo */
+}
+
+/* ==================== MENU ==================== */
+header,
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* ==================== LOGIN ==================== */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* alinha o conteúdo ao topo */
+  padding-top: 180px; /* altura do menu fixo */
+  padding-bottom: 50px; /* espaço extra para telas pequenas */
+  min-height: calc(100vh - 180px); /* altura da tela menos menu */
+  position: relative;
+  z-index: 2;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.2); /* vidro */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 40px 30px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease-in-out;
+  color: #000; /* texto preto */
+}
+
+.login-container img {
+  width: 80px;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  border: 3px solid #f5b14c;
+  padding: 5px;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #000; /* texto preto */
+}
+
+.form-control {
+  border-radius: 25px;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.9); /* fundo claro */
+  color: #000; /* texto preto */
+}
+
+.form-control::placeholder {
+  color: #555; /* placeholder cinza escuro */
+}
+
+.form-control:focus {
+  border-color: #f5b14c;
+  box-shadow: 0 0 8px rgba(245, 177, 76, 0.5);
+  background: rgba(255, 255, 255, 0.95);
+  color: #000; /* texto preto */
+}
+
+.btn-login {
+  background-color: #f5b14c;
+  border: 0;
+  border-radius: 30px;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff; /* mantém branco para contraste */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.btn-login:hover {
+  background-color: #e0a53c;
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(224, 165, 60, 0.4);
+}
+
+.extra-links {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.extra-links a {
+  color: #f5b14c; /* mantém amarelo */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+
+.info-text {
+  font-size: 14px;
+  color: #000; /* texto preto */
+}
+
+/* ==================== ANIMAÇÃO ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== MENU ORIGINAL ==================== -->
+  <header>
+    <div class="container-fluid" id="nav-container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <a href="#" class="navbar-brand">
+          <img id="logo" src="img/logo.jpg" alt="Doe.Fácil" width="150" height="150">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-link">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-link">
+          <div class="navbar-nav">
+            <a href="home.html" class="nav-item nav-link" id="Home">Home</a>
+            <a href="rede.html" class="nav-item nav-link" id="Ação-menu">Mídia</a>
+            <a href="viva.html" class="nav-item nav-link" id="Viva-menu">Doe</a>
+            <a href="conecte.html" class="nav-item nav-link active" id="Conecte-menu">Conecte</a>
+            <a href="contato.html" class="nav-item nav-link" id="Contato-menu">Contato</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>''
+
+<!-- ==================== LOGIN ==================== -->
+<div class="login-wrapper">
+  <div class="login-container">
+    <img src="img/logo.jpg" alt="Doe.Fácil" />
+    <h2>Seja bem-vindo</h2> 
+    <form action="conexao.php" method="POST">
+      <!-- Campo oculto para informar ao PHP que é login -->
+      <input type="hidden" name="acao" value="login" />
+
+      <div class="form-group">
+        <input type="text" class="form-control" name="email" placeholder="Digite seu email" required />
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="senha" placeholder="Digite sua senha" required />
+      </div>
+      <button type="submit" class="btn btn-login btn-block">Entrar</button>
+    </form>
+    <p class="info-text">
+      Ao entrar, você poderá acompanhar a porcentagem de doações feitas pelos usuários, garantindo mais transparência e confiança no site.
+    </p>
+    <div class="extra-links">
+      <p><a href="#">Esqueci minha senha</a></p>
+      <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

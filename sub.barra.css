@@ -1,0 +1,129 @@
+/* Barra principal já existente */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+/* Barra secundária */
+.sub-navbar {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  background-color: #b40a0a;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+ 
+/* Links dentro de cada grupo */
+.sub-navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.sub-navbar a:last-child {
+  margin-right: 0;
+}
+
+.sub-navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Frase centralizada */
+.center-text {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Hover dos links */
+.left-links a:hover,
+.right-links a:hover {
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+}
+
+/* Ícones da direita */
+.right-links a {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.right-links a:first-child {
+  margin-left: 0;
+}
+
+/* =========================
+   CSS da APA
+   ========================= */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1001;
+  /* acima da sub-navbar */
+  top: 0;
+  left: 0;
+  background-color: #b40a0a;
+  /* mesma cor da sub-navbar */
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  /* espaço para o topo */
+  color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar a.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+#sidebar-content {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Links da sub-navbar têm cursor pointer */
+.sub-navbar .left-links a {
+  cursor: pointer;
+}
+
+/*
+RESUMO DO CSS – NAVBAR, SUB-NAVBAR E SIDEBAR
+
+- Define a navbar principal fixa no topo da página.
+- Cria uma sub-navbar fixa abaixo da navbar, com cor vermelha,
+  links à esquerda, frase centralizada e ícones à direita.
+- Estiliza links da sub-navbar com hover e destaque visual.
+- Centraliza o texto da frase usando flexbox.
+- Define ícones clicáveis do lado direito.
+- Cria uma sidebar lateral (APA):
+  - Inicialmente escondida (width: 0).
+  - Fixa na lateral esquerda.
+  - Com animação suave de abertura.
+  - Cor igual à sub-navbar.
+  - Botão de fechar no canto superior.
+- Ajusta z-index para garantir que as barras fiquem acima do conteúdo.
+- Garante cursor pointer nos links interativos.
+*/
